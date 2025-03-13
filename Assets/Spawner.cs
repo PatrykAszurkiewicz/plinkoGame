@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
                 Instantiate(circleObstacle, position, Quaternion.identity, transform);
             }
             diff = Mathf.Abs(firstPos - secondPos);
-            float[] multies = new float[8] { 0.4f, 0.7f, 1.4f, 3f, 5f, 10f, 41f, 110f };
+            float[] multies = new float[8] { 0.4f, 0.7f, 1.4f, 3f, 5f, 10f, 41f, 99f };
 
             if (row == 14)
             {

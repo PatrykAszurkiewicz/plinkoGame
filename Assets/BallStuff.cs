@@ -39,7 +39,13 @@ public class BallStuff : MonoBehaviour
             StartCoroutine(SpawnBalls());
 
             Vector3 randomOffset = new Vector3(Random.Range(-0.1f, 0.1f), 0, 0);
-            Instantiate(ball, spawnPoint.position + randomOffset, Quaternion.identity);
+            GameObject newBall = Instantiate(ball, spawnPoint.position + randomOffset, Quaternion.identity);
+
+            Ball ballScript = newBall.GetComponent<Ball>();
+            if (ballScript != null)
+            {
+                ballScript.SetBet(currentBet);
+            }
         }
     }
     private IEnumerator SpawnBalls()

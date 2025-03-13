@@ -19,7 +19,7 @@ public class SlotMultiply : MonoBehaviour
 
         if (textMeshPro != null)
         {
-            textMeshPro.text = "x"+ multiplier.ToString();
+            textMeshPro.text = multiplier.ToString() + "x";
         }
         else
         {
@@ -31,9 +31,10 @@ public class SlotMultiply : MonoBehaviour
     {
         if (collision.CompareTag("Circle"))
         {
-            int winAmount = Mathf.RoundToInt(ballstuff.currentBet * multiplier);
+            Ball ball = collision.GetComponent<Ball>();
+            int winAmount = Mathf.RoundToInt(ball.betValue * multiplier);
             ballstuff.sCash += winAmount;
-            //Debug.Log("win " + winAmount);
+            Debug.Log("win " + winAmount);
             ballstuff.UpdateCashUI();
         }
     }
