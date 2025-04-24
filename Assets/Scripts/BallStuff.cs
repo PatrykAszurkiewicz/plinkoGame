@@ -16,6 +16,8 @@ public class BallStuff : MonoBehaviour
 
     public TMP_InputField inputField;
     public TMP_Text cashText;
+
+    //public AudioSource audioS;
     void Start()
     {
         UpdateCashUI();
@@ -37,7 +39,7 @@ public class BallStuff : MonoBehaviour
             UpdateCashUI();
 
             StartCoroutine(SpawnBalls());
-
+            //audioS.Play();
             Vector3 randomOffset = new Vector3(Random.Range(-0.1f, 0.1f), 0, 0);
             GameObject newBall = Instantiate(ball, spawnPoint.position + randomOffset, Quaternion.identity);
 
